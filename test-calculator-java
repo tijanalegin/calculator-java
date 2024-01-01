@@ -1,0 +1,37 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class CalculatorTest {
+
+    @Test
+    public void testCalculateBasicOperations() {
+        assertEquals("9", Calculator.Run("4+5"));
+        assertEquals("8", Calculator.Run("10-2"));
+        assertEquals("18", Calculator.Run("3*6"));
+        assertEquals("2", Calculator.Run("8/4"));
+    }
+
+    @Test
+    public void testCalculateOperatorPrecedence() {
+        assertEquals("14", Calculator.Run("4+5*2"));
+        
+    }
+
+    @Test
+    public void testCalculateMathFunctions() {
+        assertEquals("4.0", Calculator.Run("sqrt(16)"));
+        
+    }
+
+    @Test
+    public void testCalculateErrorHandling() {
+        assertEquals("Error", Calculator.Run("1/0"));
+    }
+
+    @Test
+    public void testCalculateComplexExpressions() {
+        assertEquals("33", Calculator.Run("10+5*4+3"));
+        
+    }
+
+}
